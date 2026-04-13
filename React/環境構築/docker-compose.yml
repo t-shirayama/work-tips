@@ -1,0 +1,15 @@
+services:
+  react:
+    build:
+      args:
+        - NODE_VER=25
+      context: .
+      dockerfile: Dockerfile
+    tty: true
+    volumes:
+      - ./frontend:/home/node/app
+      - node_modules:/home/node/app/node_modules
+    ports:
+      - 5173:5173
+volumes:
+  node_modules:
